@@ -1,13 +1,13 @@
-package com.mrtesteloper.pom_example;
+package com.mrtesteloper.pageobjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ContactPageFactory {
-	
-	WebDriver driver; 
+public class ContactPageFactory extends BasePage{
+		
+	private final String URL = "https://mrtesteloper.com/contacto";
 	
 	@FindBy(id = "g332-nombre")
 	WebElement name; 
@@ -19,7 +19,7 @@ public class ContactPageFactory {
 	WebElement message; 
 	
 	public ContactPageFactory(WebDriver driver) {
-		this.driver = driver;
+		super(driver);
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -48,5 +48,9 @@ public class ContactPageFactory {
 	
 	public String getMessage() {
 		return message.getAttribute("value");
+	}
+	
+	public void load() {
+		super.load(URL);
 	}
 }

@@ -1,18 +1,18 @@
-package com.mrtesteloper.pom_example;
+package com.mrtesteloper.pageobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class ContactPage {
-	
-	protected WebDriver driver; 
-	
+public class ContactPage extends BasePage{
+		
+	private final String URL = "https://mrtesteloper.wordpress.com/contacto";
 	private By nameID = By.id("g332-nombre");
 	private By emailID = By.id("g332-correoelectrnico");
 	private By messageID = By.id("contact-form-comment-g332-mensaje");
 	
+	
 	public ContactPage(WebDriver driver) {
-		this.driver = driver; 
+		super(driver);
 	}
 	
 	public ContactPage setName(String name) {
@@ -40,6 +40,10 @@ public class ContactPage {
 	
 	public String getMessage() {
 		return driver.findElement(messageID).getAttribute("value");
+	}		
+	
+	public void load() {
+		super.load(URL);
 	}
 	
 }

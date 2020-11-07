@@ -9,7 +9,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import com.mrtesteloper.pom_example.ContactPage;
+import com.mrtesteloper.pageobjects.ContactPage;
 
 
 public class ContactPageTest {
@@ -19,7 +19,7 @@ public class ContactPageTest {
 	@Before
 	public void setup() throws InterruptedException{
 		driver = new ChromeDriver();
-	 	driver.get("https://mrtesteloper.wordpress.com/contacto/");
+	 	driver.get("https://mrtesteloper.com/contacto/");
 	 
 	}
 	
